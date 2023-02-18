@@ -9,5 +9,13 @@ export default function DarkModeSwitch() {
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  return <>{currentTheme === "dark" ? <MdLightMode /> : <BsFillMoonFill />}</>;
+  return (
+    <>
+      {currentTheme === "dark" ? (
+        <MdLightMode onClick={() => setTheme("light")} />
+      ) : (
+        <BsFillMoonFill onClick={() => setTheme('dark')} />
+      )}
+    </>
+  );
 }
