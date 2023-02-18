@@ -16,7 +16,7 @@ export default function Header() {
         <DarkModeSwitch />
         <Link href="/">
           <h2 className="text-2xl">
-            <span className="font-bold bg-blue-500 py-1 px-2 rounded-lg mr-1">Movies</span>
+            <span className="font-bold bg-amber-500 py-1 px-2 rounded-lg mr-1">Movies</span>
             <span className="font-bold text-xl hidden sm:inline mr-2">DB</span>
           </h2>
         </Link>
