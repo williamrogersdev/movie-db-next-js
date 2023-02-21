@@ -1,3 +1,5 @@
+import Results from "@/components/Results";
+
 const API_KEY = process.env.API_KEY;
 
 export default async function Home({ searchParams }) {
@@ -9,5 +11,14 @@ export default async function Home({ searchParams }) {
     }?api_key=${API_KEY}&language=en-US&page=1`,{ next: { revalidate: 10000 } }
   );
 
-  return <h1 className="text-red-600">Home</h1>;
+  const data = await res.json();
+
+  const results = data.results;
+
+if (!res.ok) {
+  throw new Error('Failed to fetch data')
+}
+
+
+  return <div><Results results={results}/></div>
 }
